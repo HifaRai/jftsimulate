@@ -664,6 +664,33 @@ button:disabled {
   font-size: 13px;
 }
 
+  .quiz-option.correct {
+  border: 2px solid #4caf50;
+  background: #e8f5e9;
+}
+
+.quiz-option.wrong {
+  border: 2px solid #f44336;
+  background: #ffebee;
+}
+
+.quiz-option.correct::after {
+  content: " ✓ BENAR";
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.quiz-option.wrong::after {
+  content: " ✕ JAWABANMU";
+  color: #c62828;
+  font-weight: bold;
+}
+
+.quiz-option:disabled {
+  cursor: default;
+  opacity: 1;
+}
+  
 .review-answer strong {
   color: #68488e;
 }
@@ -1065,11 +1092,9 @@ button:disabled {
 
     </div>
 
-    <button
-      id="reviewBtn"
-      class="secondary-btn">
-      Review Answers
-    </button>
+    <button id="reviewBtn" type="button">
+  Review Answers
+</button>
 
     <button
       id="restartBtn"
@@ -2840,6 +2865,113 @@ function startReview() {
 }
 
 
+function renderQuestion() {
+
+  const question = JFT_QUESTIONS[currentQuestion];
+
+  // Nomor soal
+  document.getElementById("questionNumber").textContent =
+    `${currentQuestion + 1} / ${JFT_QUESTIONS.length}`;
+
+  // Pertanyaan
+  document.getElementById("quizQuestion").innerHTML =
+    question.question;
+
+  // Context / bacaan
+  const contextBox = document.getElementById("questionContext");
+
+  if (question.context) {
+    contextBox.innerHTML = question.context.replace(/\n/g, "<br>");
+    contextBox.classList.remove("hidden");
+  } else {
+    contextBox.innerHTML = "";
+    contextBox.classList.add("hidden");
+  }
+
+  // Audio
+  const audioBox = document.getElementById("audioBox");
+
+  if (question.type === "listening") {
+    audioBox.classList.remove("hidden");
+  } else {
+    audioBox.classList.add("hidden");
+
+    if ("speechSynthesis" in window) {
+      speechSynthesis.cancel();
+    }
+  }
+
+  // =====================================
+  // OPTIONS
+  // =====================================
+
+  const optionsContainer =
+    document.getElementById("quizOptions");
+
+  optionsContainer.innerHTML = "";
+
+  question.options.forEach((option, index) => {
+
+    const button = document.createElement("button");
+
+    button.className = "quiz-option";
+
+    const letter = String.fromCharCode(65 + index);
+
+    button.innerHTML = `
+      <span class="option-letter">${letter}</span>
+      <span class="option-text">${option}</span>
+    `;
+
+    // Jawaban user
+    const userAnswer = answers[currentQuestion];
+
+    if (userAnswer === index) {
+      button.classList.add("selected");
+    }
+
+    // =====================================
+    // REVIEW MODE
+    // =====================================
+
+    if (reviewMode) {
+
+      // Jawaban benar
+      if (index === question.answer) {
+        button.classList.add("correct");
+      }
+
+      // Jawaban user salah
+      if (
+        userAnswer !== null &&
+        userAnswer !== question.answer &&
+        index === userAnswer
+      ) {
+        button.classList.add("wrong");
+      }
+
+      // Tidak bisa mengubah jawaban
+      button.disabled = true;
+
+    } else {
+
+      // Mode ujian normal
+      button.addEventListener("click", function () {
+
+        answers[currentQuestion] = index;
+
+        renderQuestion();
+
+      });
+    }
+
+    optionsContainer.appendChild(button);
+  });
+
+  updateNavigation();
+}
+
+  
 function exitReviewIfFinished() {
 
   reviewMode = false;
