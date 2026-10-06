@@ -1,37 +1,30 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>JFT-Basic Mock Test</title>
+<title>JFT-Basic Mock Test</title>
 
-  <link rel="stylesheet" href="style.css">
-</head>
+<style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
 
 * {
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
-  font-family:
-    "Noto Sans JP",
-    Arial,
-    sans-serif;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f5efff,
-      #eee6ff,
-      #f8f5ff
-    );
-
-  color: #30283b;
+  padding: 0;
+  min-height: 100%;
 }
 
+body {
+  font-family: "Noto Sans JP", Arial, sans-serif;
+  background: linear-gradient(135deg, #f5efff, #eee6ff, #f8f5ff);
+  color: #30283b;
+}
 
 /* =========================
    SCREEN
@@ -45,7 +38,6 @@ body {
 .screen.active {
   display: block;
 }
-
 
 /* =========================
    START
@@ -65,32 +57,20 @@ body {
 .start-card {
   width: 100%;
   max-width: 620px;
-
-  background: rgba(255,255,255,.92);
-
+  background: rgba(255,255,255,.95);
   border-radius: 28px;
-
   padding: 45px;
-
-  box-shadow:
-    0 20px 60px rgba(83,60,120,.15);
-
+  box-shadow: 0 20px 60px rgba(83,60,120,.15);
   text-align: center;
 }
 
 .logo {
   display: inline-block;
-
   padding: 8px 18px;
-
   border-radius: 30px;
-
   background: #e6d9ff;
-
   color: #6f4ca5;
-
   font-weight: 700;
-
   letter-spacing: 1px;
 }
 
@@ -101,69 +81,47 @@ body {
 
 .subtitle {
   color: #756a82;
+  margin-top: 0;
 }
-
-
-/* =========================
-   EXAM INFO
-========================= */
 
 .exam-info {
   display: grid;
-  grid-template-columns:
-    repeat(3, 1fr);
-
+  grid-template-columns: repeat(3, 1fr);
   gap: 12px;
-
   margin: 30px 0;
 }
 
 .exam-info div {
   background: #f5f0ff;
-
   border-radius: 18px;
-
   padding: 18px 10px;
 }
 
 .exam-info strong {
   display: block;
-
   font-size: 28px;
-
   color: #7653a8;
 }
 
 .exam-info span {
   font-size: 13px;
-
   color: #7e738b;
 }
 
-
-/* =========================
-   NOTICE
-========================= */
-
 .notice {
   text-align: left;
-
   background: #faf8ff;
-
-  border-left:
-    4px solid #9270c5;
-
+  border-left: 4px solid #9270c5;
   border-radius: 12px;
-
   padding: 18px;
-
   margin-bottom: 25px;
-
   font-size: 13px;
-
   line-height: 1.7;
 }
 
+.notice p {
+  margin: 8px 0;
+}
 
 /* =========================
    BUTTON
@@ -171,42 +129,31 @@ body {
 
 button {
   font-family: inherit;
-
   cursor: pointer;
-
   border: none;
-
-  transition:
-    .2s ease;
+  transition: .2s ease;
 }
 
 .primary-btn,
 .secondary-btn {
   border-radius: 13px;
-
-  padding:
-    13px 22px;
-
+  padding: 13px 22px;
   font-size: 15px;
-
   font-weight: 600;
 }
 
 .primary-btn {
   background: #8060ad;
-
   color: white;
 }
 
 .primary-btn:hover {
   transform: translateY(-2px);
-
   background: #6e4d9d;
 }
 
 .secondary-btn {
   background: #eee7fa;
-
   color: #65468d;
 }
 
@@ -216,77 +163,63 @@ button {
 
 button:disabled {
   opacity: .4;
-
   cursor: not-allowed;
-
   transform: none;
 }
-
 
 /* =========================
    EXAM HEADER
 ========================= */
 
 .exam-header {
-  height: 82px;
-
+  min-height: 82px;
   background: white;
-
   display: flex;
-
-  justify-content:
-    space-between;
-
+  justify-content: space-between;
   align-items: center;
-
-  padding:
-    0 30px;
-
-  box-shadow:
-    0 2px 15px rgba(50,30,80,.08);
+  padding: 12px 30px;
+  box-shadow: 0 2px 15px rgba(50,30,80,.08);
 }
 
 .section-name {
   font-weight: 700;
-
   font-size: 19px;
 }
 
 .section-sub {
   font-size: 12px;
-
   color: #8b8195;
-
   margin-top: 3px;
 }
 
 .timer-box {
   text-align: center;
-
   background: #f1eaff;
-
   border-radius: 14px;
-
-  padding:
-    7px 18px;
+  padding: 7px 18px;
 }
 
 .timer-box span {
   display: block;
-
   font-size: 9px;
-
   color: #88769c;
-
   letter-spacing: 1px;
 }
 
 .timer-box strong {
   font-size: 21px;
-
   color: #65458d;
 }
 
+/* TIMER WARNING */
+
+.timer-box.warning {
+  background: #fff0f0;
+}
+
+.timer-box.warning strong {
+  color: #b94c4c;
+}
 
 /* =========================
    PROGRESS
@@ -294,40 +227,28 @@ button:disabled {
 
 .progress-wrapper {
   background: white;
-
-  padding:
-    12px 30px 15px;
+  padding: 12px 30px 15px;
 }
 
 .progress-text {
   font-size: 12px;
-
   color: #766b80;
-
   margin-bottom: 8px;
 }
 
 .progress-bar {
   height: 6px;
-
   background: #eee8f5;
-
   border-radius: 10px;
-
   overflow: hidden;
 }
 
 #progressBar {
   height: 100%;
-
   width: 0%;
-
   background: #8b6abb;
-
-  transition:
-    width .3s ease;
+  transition: width .3s ease;
 }
-
 
 /* =========================
    EXAM LAYOUT
@@ -335,21 +256,12 @@ button:disabled {
 
 .exam-container {
   display: grid;
-
-  grid-template-columns:
-    230px minmax(0, 800px);
-
+  grid-template-columns: 230px minmax(0, 800px);
   gap: 25px;
-
   max-width: 1200px;
-
-  margin:
-    25px auto;
-
-  padding:
-    0 20px;
+  margin: 25px auto;
+  padding: 0 20px;
 }
-
 
 /* =========================
    QUESTION NAV
@@ -357,70 +269,64 @@ button:disabled {
 
 .question-nav {
   background: white;
-
   border-radius: 20px;
-
   padding: 18px;
-
   height: fit-content;
-
   position: sticky;
-
   top: 20px;
-
-  box-shadow:
-    0 10px 30px rgba(70,40,100,.08);
+  box-shadow: 0 10px 30px rgba(70,40,100,.08);
 }
 
 .nav-title {
   font-weight: 700;
-
   margin-bottom: 15px;
+}
+
+.nav-section-title {
+  font-size: 10px;
+  color: #8d8298;
+  margin: 13px 0 7px;
+  font-weight: 700;
 }
 
 #questionGrid {
   display: grid;
-
-  grid-template-columns:
-    repeat(4, 1fr);
-
+  grid-template-columns: repeat(4, 1fr);
   gap: 7px;
 }
 
 .question-number {
   aspect-ratio: 1;
-
   border-radius: 9px;
-
   background: #f1edf5;
-
   display: flex;
-
   justify-content: center;
-
   align-items: center;
-
   font-size: 12px;
-
   cursor: pointer;
-
   color: #756b7c;
+  transition: .15s;
+}
+
+.question-number:hover {
+  transform: scale(1.05);
 }
 
 .question-number.current {
   background: #8262ac;
-
   color: white;
-
   font-weight: 700;
 }
 
 .question-number.answered {
   background: #dcd0ec;
-
   color: #604681;
 }
 
+.question-number.current.answered {
+  background: #8262ac;
+  color: white;
+}
 
 /* =========================
    QUESTION
@@ -428,60 +334,43 @@ button:disabled {
 
 .question-area {
   background: white;
-
   border-radius: 23px;
-
   padding: 35px;
-
   min-height: 500px;
-
-  box-shadow:
-    0 10px 30px rgba(70,40,100,.08);
+  box-shadow: 0 10px 30px rgba(70,40,100,.08);
 }
 
 .category-label {
   display: inline-block;
-
   background: #f0e8fa;
-
   color: #7956a0;
-
-  padding:
-    5px 12px;
-
+  padding: 5px 12px;
   border-radius: 20px;
-
   font-size: 11px;
-
   margin-bottom: 20px;
+}
+
+.question-context {
+  white-space: pre-line;
+  background: #faf8fd;
+  border-radius: 14px;
+  padding: 18px;
+  line-height: 1.9;
+  margin-bottom: 20px;
+  font-size: 15px;
 }
 
 .question-text {
   font-size: 23px;
-
   line-height: 1.8;
-
   margin-bottom: 25px;
-
   font-weight: 500;
+  white-space: pre-line;
 }
 
 .question-text .jp {
   font-size: 25px;
 }
-
-.question-context {
-  background: #faf8fd;
-
-  border-radius: 14px;
-
-  padding: 18px;
-
-  line-height: 1.8;
-
-  margin-bottom: 20px;
-}
-
 
 /* =========================
    OPTIONS
@@ -489,75 +378,49 @@ button:disabled {
 
 .options {
   display: flex;
-
   flex-direction: column;
-
   gap: 11px;
 }
 
 .option {
   display: flex;
-
   align-items: center;
-
   gap: 13px;
-
   padding: 15px 17px;
-
-  border:
-    1px solid #e5dfea;
-
+  border: 1px solid #e5dfea;
   border-radius: 13px;
-
   cursor: pointer;
-
-  transition:
-    .15s ease;
+  transition: .15s ease;
 }
 
 .option:hover {
   background: #faf7ff;
-
   border-color: #bba3d8;
 }
 
 .option.selected {
   background: #f0e7fb;
-
   border-color: #8262ac;
-
-  box-shadow:
-    0 0 0 2px #ddcff0;
+  box-shadow: 0 0 0 2px #ddcff0;
 }
 
 .option-letter {
   width: 31px;
-
   height: 31px;
-
   min-width: 31px;
-
   border-radius: 50%;
-
   background: #eee8f5;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   font-size: 12px;
-
   font-weight: 700;
 }
 
 .option.selected .option-letter {
   background: #8262ac;
-
   color: white;
 }
-
 
 /* =========================
    AUDIO
@@ -565,17 +428,11 @@ button:disabled {
 
 .audio-box {
   display: flex;
-
   align-items: center;
-
   gap: 15px;
-
   padding: 17px;
-
   margin-bottom: 20px;
-
   background: #f3edfb;
-
   border-radius: 16px;
 }
 
@@ -585,22 +442,15 @@ button:disabled {
 
 .audio-box p {
   margin: 2px 0 0;
-
   font-size: 11px;
-
   color: #796d82;
 }
 
 .audio-box button {
   margin-left: auto;
-
   background: #8060ad;
-
   color: white;
-
-  padding:
-    10px 16px;
-
+  padding: 10px 16px;
   border-radius: 10px;
 }
 
@@ -608,25 +458,17 @@ button:disabled {
   display: none !important;
 }
 
-
 /* =========================
    NAV BUTTONS
 ========================= */
 
 .navigation-buttons {
   display: flex;
-
-  justify-content:
-    space-between;
-
+  justify-content: space-between;
   margin-top: 35px;
-
   padding-top: 20px;
-
-  border-top:
-    1px solid #eee9f2;
+  border-top: 1px solid #eee9f2;
 }
-
 
 /* =========================
    TRANSITION
@@ -634,9 +476,7 @@ button:disabled {
 
 #transitionScreen {
   align-items: center;
-
   justify-content: center;
-
   padding: 20px;
 }
 
@@ -646,44 +486,26 @@ button:disabled {
 
 .transition-card {
   width: 100%;
-
   max-width: 500px;
-
   background: white;
-
   padding: 45px;
-
   text-align: center;
-
   border-radius: 25px;
-
-  box-shadow:
-    0 20px 50px rgba(70,40,100,.12);
+  box-shadow: 0 20px 50px rgba(70,40,100,.12);
 }
 
 .transition-icon {
   width: 65px;
-
   height: 65px;
-
-  margin:
-    0 auto 20px;
-
+  margin: 0 auto 20px;
   border-radius: 50%;
-
   background: #e5d9f2;
-
   color: #73539a;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   font-size: 28px;
 }
-
 
 /* =========================
    RESULT
@@ -691,9 +513,7 @@ button:disabled {
 
 #resultScreen {
   align-items: center;
-
   justify-content: center;
-
   padding: 25px;
 }
 
@@ -703,48 +523,32 @@ button:disabled {
 
 .result-card {
   width: 100%;
-
   max-width: 700px;
-
   background: white;
-
   border-radius: 27px;
-
   padding: 40px;
-
   text-align: center;
-
-  box-shadow:
-    0 20px 60px rgba(70,40,100,.14);
+  box-shadow: 0 20px 60px rgba(70,40,100,.14);
 }
 
 .result-title {
   font-weight: 700;
-
   color: #7655a0;
-
   letter-spacing: 2px;
 }
 
 .score-label {
   margin-top: 25px;
-
   font-size: 11px;
-
   color: #8a7d94;
-
   letter-spacing: 2px;
 }
 
 .final-score {
   font-size: 75px;
-
   line-height: 1;
-
   font-weight: 700;
-
   color: #7555a0;
-
   margin-top: 10px;
 }
 
@@ -754,128 +558,89 @@ button:disabled {
 
 .level-result {
   display: inline-block;
-
   margin-top: 18px;
-
-  padding:
-    8px 25px;
-
+  padding: 8px 25px;
   border-radius: 30px;
-
   background: #eee4f8;
-
   color: #68488e;
-
   font-weight: 700;
 }
 
 .result-divider {
   height: 1px;
-
   background: #eee9f2;
-
-  margin:
-    25px 0;
+  margin: 25px 0;
 }
 
 .raw-score {
   display: grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
+  grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
 
 .raw-score div {
   background: #faf8fd;
-
   border-radius: 13px;
-
   padding: 15px;
 }
 
 .raw-score span {
   display: block;
-
   font-size: 11px;
-
   color: #897d91;
 }
 
 .raw-score strong {
   font-size: 20px;
-
   color: #634580;
 }
 
 .result-card h3 {
   text-align: left;
-
   margin-top: 30px;
 }
-
 
 /* =========================
    SECTION RESULTS
 ========================= */
 
 .section-result {
-  margin:
-    14px 0;
-
+  margin: 14px 0;
   text-align: left;
 }
 
 .section-result-header {
   display: flex;
-
-  justify-content:
-    space-between;
-
+  justify-content: space-between;
   font-size: 13px;
-
   margin-bottom: 5px;
 }
 
 .section-result-bar {
   height: 8px;
-
   background: #eeeaf2;
-
   border-radius: 20px;
-
   overflow: hidden;
 }
 
 .section-result-fill {
   height: 100%;
-
   background: #9070bb;
 }
 
+/* =========================
+   WARNING
+========================= */
+
 .result-warning {
-  margin:
-    25px 0;
-
+  margin: 25px 0;
   background: #fff9e9;
-
   border-radius: 13px;
-
   padding: 15px;
-
   text-align: left;
-
   font-size: 11px;
-
   line-height: 1.7;
 }
-
-.result-card button {
-  margin:
-    5px;
-}
-
 
 /* =========================
    REVIEW
@@ -883,19 +648,28 @@ button:disabled {
 
 .review-correct {
   border-color: #82b594 !important;
-
   background: #f0faf3 !important;
 }
 
 .review-wrong {
   border-color: #c88989 !important;
-
   background: #fff3f3 !important;
 }
 
+.review-answer {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #f8f5fb;
+  font-size: 13px;
+}
+
+.review-answer strong {
+  color: #68488e;
+}
 
 /* =========================
-   RESPONSIVE
+   MOBILE
 ========================= */
 
 @media (max-width: 800px) {
@@ -906,13 +680,11 @@ button:disabled {
 
   .question-nav {
     position: static;
-
     order: 2;
   }
 
   #questionGrid {
-    grid-template-columns:
-      repeat(10, 1fr);
+    grid-template-columns: repeat(10, 1fr);
   }
 
   .question-area {
@@ -924,13 +696,11 @@ button:disabled {
   }
 
   .exam-header {
-    padding:
-      0 15px;
+    padding: 12px 15px;
   }
 
   .progress-wrapper {
-    padding:
-      10px 15px;
+    padding: 10px 15px;
   }
 
   .start-card,
@@ -959,8 +729,7 @@ button:disabled {
   }
 
   #questionGrid {
-    grid-template-columns:
-      repeat(8, 1fr);
+    grid-template-columns: repeat(8, 1fr);
   }
 
   .question-area {
@@ -979,328 +748,378 @@ button:disabled {
     flex: 1;
   }
 
+  .audio-box {
+    align-items: flex-start;
+  }
+
+  .audio-box button {
+    padding: 9px 12px;
+  }
+
 }
+</style>
+</head>
+
 <body>
 
-  <!-- =========================
-       START SCREEN
-  ========================== -->
+<!-- =====================================================
+     START SCREEN
+===================================================== -->
 
-  <section id="startScreen" class="screen active">
+<section id="startScreen" class="screen active">
 
-    <div class="start-card">
+  <div class="start-card">
 
-      <div class="logo">
-        JFT-Basic
-      </div>
-
-      <h1>Mock Test</h1>
-
-      <p class="subtitle">
-        Japan Foundation Test for Basic Japanese
-      </p>
-
-      <div class="exam-info">
-
-        <div>
-          <strong>50</strong>
-          <span>Questions</span>
-        </div>
-
-        <div>
-          <strong>60</strong>
-          <span>Minutes</span>
-        </div>
-
-        <div>
-          <strong>4</strong>
-          <span>Sections</span>
-        </div>
-
-      </div>
-
-      <div class="notice">
-        <strong>試験について</strong>
-
-        <p>
-          この模擬試験はJFT-Basicの形式を参考にした
-          オリジナル問題です。
-        </p>
-
-        <p>
-          This is a practice simulation. The score is an
-          estimated score and is not an official JFT-Basic score.
-        </p>
-      </div>
-
-      <button id="startBtn" class="primary-btn">
-        START TEST
-      </button>
-
+    <div class="logo">
+      JFT-Basic
     </div>
 
-  </section>
+    <h1>Mock Test</h1>
 
+    <p class="subtitle">
+      Japan Foundation Test for Basic Japanese
+    </p>
 
-  <!-- =========================
-       EXAM SCREEN
-  ========================== -->
-
-  <section id="examScreen" class="screen">
-
-    <header class="exam-header">
+    <div class="exam-info">
 
       <div>
-        <div id="sectionName" class="section-name">
-          文字と語彙
-        </div>
-
-        <div id="sectionSub" class="section-sub">
-          Script & Vocabulary
-        </div>
+        <strong>50</strong>
+        <span>Questions</span>
       </div>
 
-      <div class="timer-box">
-        <span>TIME</span>
-        <strong id="timer">60:00</strong>
+      <div>
+        <strong>60</strong>
+        <span>Minutes</span>
       </div>
 
-    </header>
-
-
-    <div class="progress-wrapper">
-
-      <div class="progress-text">
-        Question
-        <strong id="questionNumber">1</strong>
-        /
-        <strong id="totalQuestions">50</strong>
-      </div>
-
-      <div class="progress-bar">
-        <div id="progressBar"></div>
+      <div>
+        <strong>4</strong>
+        <span>Sections</span>
       </div>
 
     </div>
 
+    <div class="notice">
 
-    <main class="exam-container">
+      <strong>試験について</strong>
 
-      <!-- QUESTION NAVIGATION -->
-
-      <aside class="question-nav">
-
-        <div class="nav-title">
-          Questions
-        </div>
-
-        <div id="questionGrid"></div>
-
-      </aside>
-
-
-      <!-- QUESTION AREA -->
-
-      <article class="question-area">
-
-        <div class="category-label" id="categoryLabel">
-          語の意味
-        </div>
-
-        <div id="questionContent"></div>
-
-        <!-- LISTENING AUDIO -->
-
-        <div id="audioBox" class="audio-box hidden">
-
-          <div class="audio-icon">
-            🔊
-          </div>
-
-          <div>
-            <strong>Listening</strong>
-            <p>
-              Dengarkan percakapan sebelum memilih jawaban.
-            </p>
-          </div>
-
-          <button id="playAudioBtn">
-            ▶ Play
-          </button>
-
-        </div>
-
-
-        <div id="options" class="options"></div>
-
-
-        <div class="navigation-buttons">
-
-          <button
-            id="prevBtn"
-            class="secondary-btn">
-            ← Previous
-          </button>
-
-          <button
-            id="nextBtn"
-            class="primary-btn">
-            Next →
-          </button>
-
-        </div>
-
-      </article>
-
-    </main>
-
-  </section>
-
-
-  <!-- =========================
-       SECTION TRANSITION
-  ========================== -->
-
-  <section id="transitionScreen" class="screen">
-
-    <div class="transition-card">
-
-      <div class="transition-icon">
-        ✓
-      </div>
-
-      <h2 id="transitionTitle">
-        Section Completed
-      </h2>
-
-      <p id="transitionText">
-        You cannot return to the previous section.
+      <p>
+        この模擬試験はJFT-Basicの形式を参考にした
+        オリジナル問題です。
       </p>
 
-      <button
-        id="continueBtn"
-        class="primary-btn">
-        Continue →
-      </button>
+      <p>
+        This is a practice simulation. The score is an
+        estimated score and is not an official JFT-Basic score.
+      </p>
 
     </div>
 
-  </section>
+    <button id="startBtn" class="primary-btn">
+      START TEST
+    </button>
+
+  </div>
+
+</section>
 
 
-  <!-- =========================
-       RESULT SCREEN
-  ========================== -->
+<!-- =====================================================
+     EXAM SCREEN
+===================================================== -->
 
-  <section id="resultScreen" class="screen">
+<section id="examScreen" class="screen">
 
-    <div class="result-card">
+  <header class="exam-header">
 
-      <div class="result-title">
-        TEST COMPLETED
+    <div>
+
+      <div id="sectionName" class="section-name">
+        文字と語彙
       </div>
 
-      <div class="score-label">
-        ESTIMATED SCORE
+      <div id="sectionSub" class="section-sub">
+        Script & Vocabulary
       </div>
-
-      <div id="finalScore" class="final-score">
-        0
-      </div>
-
-      <div class="score-max">
-        / 250
-      </div>
-
-      <div id="levelResult" class="level-result">
-        -
-      </div>
-
-
-      <div class="result-divider"></div>
-
-
-      <div class="raw-score">
-
-        <div>
-          <span>Correct</span>
-          <strong id="correctCount">
-            0 / 50
-          </strong>
-        </div>
-
-        <div>
-          <span>Accuracy</span>
-          <strong id="accuracy">
-            0%
-          </strong>
-        </div>
-
-      </div>
-
-
-      <h3>Section Performance</h3>
-
-      <div id="sectionResults"></div>
-
-
-      <div class="result-warning">
-
-        ⚠️ Estimated practice score only.
-
-        <br>
-
-        The official JFT-Basic score uses
-        statistical equating and cannot be reproduced
-        exactly by this website.
-
-      </div>
-
-
-      <button
-        id="reviewBtn"
-        class="secondary-btn">
-        Review Answers
-      </button>
-
-      <button
-        id="restartBtn"
-        class="primary-btn">
-        Try Again
-      </button>
 
     </div>
 
-  </section>
+    <div id="timerBox" class="timer-box">
+
+      <span>TIME</span>
+
+      <strong id="timer">
+        60:00
+      </strong>
+
+    </div>
+
+  </header>
 
 
-  
+  <div class="progress-wrapper">
 
+    <div class="progress-text">
+
+      Question
+
+      <strong id="questionNumber">
+        1
+      </strong>
+
+      /
+
+      <strong id="totalQuestions">
+        50
+      </strong>
+
+    </div>
+
+    <div class="progress-bar">
+      <div id="progressBar"></div>
+    </div>
+
+  </div>
+
+
+  <main class="exam-container">
+
+    <aside class="question-nav">
+
+      <div class="nav-title">
+        Questions
+      </div>
+
+      <div id="questionGrid"></div>
+
+    </aside>
+
+
+    <article class="question-area">
+
+      <div
+        class="category-label"
+        id="categoryLabel">
+        語の意味
+      </div>
+
+
+      <div id="questionContent"></div>
+
+
+      <div
+        id="audioBox"
+        class="audio-box hidden">
+
+        <div class="audio-icon">
+          🔊
+        </div>
+
+        <div>
+
+          <strong>
+            Listening
+          </strong>
+
+          <p>
+            Dengarkan percakapan sebelum memilih jawaban.
+          </p>
+
+        </div>
+
+        <button id="playAudioBtn">
+          ▶ Play
+        </button>
+
+      </div>
+
+
+      <div
+        id="options"
+        class="options">
+      </div>
+
+
+      <div class="navigation-buttons">
+
+        <button
+          id="prevBtn"
+          class="secondary-btn">
+          ← Previous
+        </button>
+
+        <button
+          id="nextBtn"
+          class="primary-btn">
+          Next →
+        </button>
+
+      </div>
+
+    </article>
+
+  </main>
+
+</section>
+
+
+<!-- =====================================================
+     TRANSITION
+===================================================== -->
+
+<section
+  id="transitionScreen"
+  class="screen">
+
+  <div class="transition-card">
+
+    <div class="transition-icon">
+      ✓
+    </div>
+
+    <h2 id="transitionTitle">
+      Section Completed
+    </h2>
+
+    <p id="transitionText">
+      You cannot return to the previous section.
+    </p>
+
+    <button
+      id="continueBtn"
+      class="primary-btn">
+      Continue →
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     RESULT
+===================================================== -->
+
+<section
+  id="resultScreen"
+  class="screen">
+
+  <div class="result-card">
+
+    <div class="result-title">
+      TEST COMPLETED
+    </div>
+
+    <div class="score-label">
+      ESTIMATED SCORE
+    </div>
+
+    <div
+      id="finalScore"
+      class="final-score">
+      0
+    </div>
+
+    <div class="score-max">
+      / 250
+    </div>
+
+    <div
+      id="levelResult"
+      class="level-result">
+      -
+    </div>
+
+    <div class="result-divider"></div>
+
+    <div class="raw-score">
+
+      <div>
+
+        <span>
+          Correct
+        </span>
+
+        <strong id="correctCount">
+          0 / 50
+        </strong>
+
+      </div>
+
+      <div>
+
+        <span>
+          Accuracy
+        </span>
+
+        <strong id="accuracy">
+          0%
+        </strong>
+
+      </div>
+
+    </div>
+
+    <h3>
+      Section Performance
+    </h3>
+
+    <div id="sectionResults"></div>
+
+    <div class="result-warning">
+
+      ⚠️ Estimated practice score only.
+
+      <br><br>
+
+      The official JFT-Basic score uses
+      statistical equating and cannot be reproduced
+      exactly by this website.
+
+    </div>
+
+    <button
+      id="reviewBtn"
+      class="secondary-btn">
+      Review Answers
+    </button>
+
+    <button
+      id="restartBtn"
+      class="primary-btn">
+      Try Again
+    </button>
+
+  </div>
+
+</section>
+
+
+<script>
+
+/* =====================================================
+   QUESTION DATABASE
+===================================================== */
 
 const JFT_QUESTIONS = [
 
-/* =====================================================
+/* =========================
    SECTION 1
-   文字と語彙
-   QUESTIONS 1-12
-===================================================== */
+   1-12
+========================= */
 
 {
   id: 1,
   section: 1,
   category: "語の意味",
   type: "choice",
-
-  question:
-    "「予約」の意味はどれですか。",
-
+  question: "「予約」の意味はどれですか。",
   options: [
     "tempat memesan terlebih dahulu",
     "membayar dengan uang tunai",
     "mencari tempat baru",
     "membatalkan pekerjaan"
   ],
-
   answer: 0
 },
 
@@ -1309,17 +1128,13 @@ const JFT_QUESTIONS = [
   section: 1,
   category: "語の用法",
   type: "choice",
-
-  question:
-    "「大切」の使い方が正しい文はどれですか。",
-
+  question: "「大切」の使い方が正しい文はどれですか。",
   options: [
     "これは大切な写真です。",
     "写真を大切に食べました。",
     "大切を駅で買いました。",
     "昨日は大切に行きました。"
   ],
-
   answer: 0
 },
 
@@ -1328,17 +1143,13 @@ const JFT_QUESTIONS = [
   section: 1,
   category: "漢字の読み",
   type: "choice",
-
-  question:
-    "「会社」の読み方はどれですか。",
-
+  question: "「会社」の読み方はどれですか。",
   options: [
     "かいしゃ",
     "かいじゃ",
     "がいしゃ",
     "かしゃい"
   ],
-
   answer: 0
 },
 
@@ -1347,17 +1158,13 @@ const JFT_QUESTIONS = [
   section: 1,
   category: "漢字の読み",
   type: "choice",
-
-  question:
-    "「病院」の読み方はどれですか。",
-
+  question: "「病院」の読み方はどれですか。",
   options: [
     "びょういん",
     "びょいん",
     "びょうえん",
     "びょうにん"
   ],
-
   answer: 0
 },
 
@@ -1366,17 +1173,13 @@ const JFT_QUESTIONS = [
   section: 1,
   category: "漢字の意味と用法",
   type: "choice",
-
-  question:
-    "「駅」の意味として正しいものはどれですか。",
-
+  question: "「駅」の意味として正しいものはどれですか。",
   options: [
     "stasiun",
     "rumah sakit",
     "kantor pos",
     "sekolah"
   ],
-
   answer: 0
 },
 
@@ -1385,17 +1188,13 @@ const JFT_QUESTIONS = [
   section: 1,
   category: "語の意味",
   type: "choice",
-
-  question:
-    "「急いでください。」の意味はどれですか。",
-
+  question: "「急いでください。」の意味はどれですか。",
   options: [
     "Tolong segera / cepat.",
     "Tolong tunggu.",
     "Tolong duduk.",
     "Tolong ulangi."
   ],
-
   answer: 0
 },
 
@@ -1404,17 +1203,13 @@ const JFT_QUESTIONS = [
   section: 1,
   category: "語の用法",
   type: "choice",
-
-  question:
-    "「慣れる」の使い方が正しい文はどれですか。",
-
+  question: "「慣れる」の使い方が正しい文はどれですか。",
   options: [
     "日本の生活にだんだん慣れました。",
     "ご飯を慣れて食べました。",
     "駅を慣れて買いました。",
     "昨日を慣れていました。"
   ],
-
   answer: 0
 },
 
@@ -1423,17 +1218,13 @@ const JFT_QUESTIONS = [
   section: 1,
   category: "漢字の読み",
   type: "choice",
-
-  question:
-    "「毎朝」の読み方はどれですか。",
-
+  question: "「毎朝」の読み方はどれですか。",
   options: [
     "まいあさ",
     "まいちょう",
     "まいばん",
     "まいげつ"
   ],
-
   answer: 0
 },
 
@@ -1442,17 +1233,13 @@ const JFT_QUESTIONS = [
   section: 1,
   category: "漢字の意味と用法",
   type: "choice",
-
-  question:
-    "「無料」の意味はどれですか。",
-
+  question: "「無料」の意味はどれですか。",
   options: [
     "gratis",
     "mahal",
     "terlambat",
     "penuh"
   ],
-
   answer: 0
 },
 
@@ -1461,17 +1248,13 @@ const JFT_QUESTIONS = [
   section: 1,
   category: "語の意味",
   type: "choice",
-
-  question:
-    "「必要」の意味はどれですか。",
-
+  question: "「必要」の意味はどれですか。",
   options: [
     "diperlukan",
     "dilarang",
     "berbahaya",
     "berbeda"
   ],
-
   answer: 0
 },
 
@@ -1480,17 +1263,13 @@ const JFT_QUESTIONS = [
   section: 1,
   category: "語の用法",
   type: "choice",
-
-  question:
-    "「間に合う」の使い方が正しい文はどれですか。",
-
+  question: "「間に合う」の使い方が正しい文はどれですか。",
   options: [
     "急いだので、電車に間に合いました。",
     "ご飯を間に合いました。",
     "友達を間に合いました。",
     "駅で間に合うを買いました。"
   ],
-
   answer: 0
 },
 
@@ -1499,46 +1278,34 @@ const JFT_QUESTIONS = [
   section: 1,
   category: "漢字の読み",
   type: "choice",
-
-  question:
-    "「仕事」の読み方はどれですか。",
-
+  question: "「仕事」の読み方はどれですか。",
   options: [
     "しごと",
     "しこと",
     "じごと",
     "しごど"
   ],
-
   answer: 0
 },
 
-
-/* =====================================================
+/* =========================
    SECTION 2
-   会話と表現
-   QUESTIONS 13-24
-===================================================== */
+   13-24
+========================= */
 
 {
   id: 13,
   section: 2,
   category: "文法",
   type: "choice",
-
-  context:
-    "A：明日は何をしますか。\nB：天気がよかったら、＿＿＿。",
-
-  question:
-    "正しい答えを選んでください。",
-
+  context: "A：明日は何をしますか。\nB：天気がよかったら、＿＿＿。",
+  question: "正しい答えを選んでください。",
   options: [
     "公園へ行きます",
     "公園へ行きました",
     "公園へ行っていました",
     "公園へ行くでした"
   ],
-
   answer: 0
 },
 
@@ -1547,20 +1314,14 @@ const JFT_QUESTIONS = [
   section: 2,
   category: "文法",
   type: "choice",
-
-  context:
-    "今日は仕事がありません。",
-
-  question:
-    "「ので」を使って正しい文を選んでください。",
-
+  context: "今日は仕事がありません。",
+  question: "「ので」を使って正しい文を選んでください。",
   options: [
     "仕事がないので、映画を見ます。",
     "仕事がないので、映画を見ましたでした。",
     "仕事がないので、映画を見ませんでしたか。",
     "仕事がないので、映画を見てくださいません。"
   ],
-
   answer: 0
 },
 
@@ -1569,17 +1330,13 @@ const JFT_QUESTIONS = [
   section: 2,
   category: "文法",
   type: "choice",
-
-  question:
-    "「日本へ行く＿＿＿、日本語を勉強しています。」",
-
+  question: "「日本へ行く＿＿＿、日本語を勉強しています。」",
   options: [
     "ために",
     "そうに",
     "ところで",
     "ばかりで"
   ],
-
   answer: 0
 },
 
@@ -1588,17 +1345,13 @@ const JFT_QUESTIONS = [
   section: 2,
   category: "文法",
   type: "choice",
-
-  question:
-    "「この料理は辛＿＿＿です。」",
-
+  question: "「この料理は辛＿＿＿です。」",
   options: [
     "そう",
     "よう",
     "ため",
     "はず"
   ],
-
   answer: 0
 },
 
@@ -1607,20 +1360,14 @@ const JFT_QUESTIONS = [
   section: 2,
   category: "表現",
   type: "choice",
-
-  context:
-    "会社で上司に質問があります。",
-
-  question:
-    "一番自然な表現はどれですか。",
-
+  context: "会社で上司に質問があります。",
+  question: "一番自然な表現はどれですか。",
   options: [
     "すみません、ちょっとお聞きしたいことがあります。",
     "ねえ、これ教えて。",
     "おい、これ何？",
     "これを教える。"
   ],
-
   answer: 0
 },
 
@@ -1629,17 +1376,13 @@ const JFT_QUESTIONS = [
   section: 2,
   category: "文法",
   type: "choice",
-
-  question:
-    "「今、昼ご飯を＿＿＿ところです。」",
-
+  question: "「今、昼ご飯を＿＿＿ところです。」",
   options: [
     "食べている",
     "食べた",
     "食べるの",
     "食べますの"
   ],
-
   answer: 0
 },
 
@@ -1648,17 +1391,13 @@ const JFT_QUESTIONS = [
   section: 2,
   category: "文法",
   type: "choice",
-
-  question:
-    "「このかばんは軽くて＿＿＿です。」",
-
+  question: "「このかばんは軽くて＿＿＿です。」",
   options: [
     "使いやすい",
     "使いやすく",
     "使いやすかったに",
     "使うやすい"
   ],
-
   answer: 0
 },
 
@@ -1667,20 +1406,14 @@ const JFT_QUESTIONS = [
   section: 2,
   category: "表現",
   type: "choice",
-
-  context:
-    "友達がプレゼントをくれました。",
-
-  question:
-    "自然な返事はどれですか。",
-
+  context: "友達がプレゼントをくれました。",
+  question: "自然な返事はどれですか。",
   options: [
     "ありがとう。うれしい！",
     "どういたしまして。",
     "ごちそうさまでした。",
     "お先に失礼します。"
   ],
-
   answer: 0
 },
 
@@ -1689,17 +1422,13 @@ const JFT_QUESTIONS = [
   section: 2,
   category: "文法",
   type: "choice",
-
-  question:
-    "「雨が降っている＿＿＿、出かけます。」",
-
+  question: "「雨が降っている＿＿＿、出かけます。」",
   options: [
     "のに",
     "のでに",
     "ばかり",
     "ように"
   ],
-
   answer: 0
 },
 
@@ -1708,17 +1437,13 @@ const JFT_QUESTIONS = [
   section: 2,
   category: "文法",
   type: "choice",
-
-  question:
-    "「明日は忙しい＿＿＿です。」",
-
+  question: "「明日は忙しい＿＿＿です。」",
   options: [
     "はず",
     "ために",
     "ところ",
     "ばかり"
   ],
-
   answer: 0
 },
 
@@ -1727,20 +1452,14 @@ const JFT_QUESTIONS = [
   section: 2,
   category: "表現",
   type: "choice",
-
-  context:
-    "店員にサイズを聞きたいです。",
-
-  question:
-    "一番自然な言い方はどれですか。",
-
+  context: "店員にサイズを聞きたいです。",
+  question: "一番自然な言い方はどれですか。",
   options: [
     "すみません。もう少し大きいサイズはありますか。",
     "大きいの、ある？",
     "大きいサイズをある。",
     "これ、大きくする？"
   ],
-
   answer: 0
 },
 
@@ -1749,46 +1468,34 @@ const JFT_QUESTIONS = [
   section: 2,
   category: "文法",
   type: "choice",
-
-  question:
-    "「日本語が上手に＿＿＿ようになりました。」",
-
+  question: "「日本語が上手に＿＿＿ようになりました。」",
   options: [
     "話せる",
     "話した",
     "話すの",
     "話さない"
   ],
-
   answer: 0
 },
 
-
-/* =====================================================
+/* =========================
    SECTION 3
-   聴解
-   QUESTIONS 25-36
-===================================================== */
+   25-36
+========================= */
 
 {
   id: 25,
   section: 3,
   category: "内容理解",
   type: "listening",
-
-  audio:
-    "男の人：明日の朝、七時に駅で会いませんか。女の人：すみません。七時半でもいいですか。男の人：はい、わかりました。",
-
-  question:
-    "二人は何時に会いますか。",
-
+  audio: "男の人：明日の朝、七時に駅で会いませんか。女の人：すみません。七時半でもいいですか。男の人：はい、わかりました。",
+  question: "二人は何時に会いますか。",
   options: [
     "7時",
     "7時半",
     "8時",
     "8時半"
   ],
-
   answer: 1
 },
 
@@ -1797,20 +1504,14 @@ const JFT_QUESTIONS = [
   section: 3,
   category: "内容理解",
   type: "listening",
-
-  audio:
-    "女の人：このシャツはいくらですか。店員：三千円です。女の人：じゃあ、これをください。",
-
-  question:
-    "シャツはいくらですか。",
-
+  audio: "女の人：このシャツはいくらですか。店員：三千円です。女の人：じゃあ、これをください。",
+  question: "シャツはいくらですか。",
   options: [
     "1,000円",
     "2,000円",
     "3,000円",
     "4,000円"
   ],
-
   answer: 2
 },
 
@@ -1819,20 +1520,14 @@ const JFT_QUESTIONS = [
   section: 3,
   category: "内容理解",
   type: "listening",
-
-  audio:
-    "男の人：田中さんは今日来ますか。女の人：いいえ、今日は病院へ行くと言っていました。",
-
-  question:
-    "田中さんはどこへ行きますか。",
-
+  audio: "男の人：田中さんは今日来ますか。女の人：いいえ、今日は病院へ行くと言っていました。",
+  question: "田中さんはどこへ行きますか。",
   options: [
     "学校",
     "会社",
     "病院",
     "駅"
   ],
-
   answer: 2
 },
 
@@ -1841,20 +1536,14 @@ const JFT_QUESTIONS = [
   section: 3,
   category: "店でのやりとり",
   type: "listening",
-
-  audio:
-    "店員：袋はご利用ですか。女の人：はい、お願いします。",
-
-  question:
-    "女の人は何をお願いしますか。",
-
+  audio: "店員：袋はご利用ですか。女の人：はい、お願いします。",
+  question: "女の人は何をお願いしますか。",
   options: [
     "水",
     "袋",
     "レシート",
     "傘"
   ],
-
   answer: 1
 },
 
@@ -1863,20 +1552,14 @@ const JFT_QUESTIONS = [
   section: 3,
   category: "公共機関",
   type: "listening",
-
-  audio:
-    "駅員：電車は三番線から出ます。",
-
-  question:
-    "電車は何番線から出ますか。",
-
+  audio: "駅員：電車は三番線から出ます。",
+  question: "電車は何番線から出ますか。",
   options: [
     "一番線",
     "二番線",
     "三番線",
     "四番線"
   ],
-
   answer: 2
 },
 
@@ -1885,20 +1568,14 @@ const JFT_QUESTIONS = [
   section: 3,
   category: "内容理解",
   type: "listening",
-
-  audio:
-    "女の人：週末、山へ行きませんか。男の人：いいですね。でも、日曜日は仕事があります。土曜日なら大丈夫です。",
-
-  question:
-    "男の人はいつ山へ行けますか。",
-
+  audio: "女の人：週末、山へ行きませんか。男の人：いいですね。でも、日曜日は仕事があります。土曜日なら大丈夫です。",
+  question: "男の人はいつ山へ行けますか。",
   options: [
     "金曜日",
     "土曜日",
     "日曜日",
     "月曜日"
   ],
-
   answer: 1
 },
 
@@ -1907,20 +1584,14 @@ const JFT_QUESTIONS = [
   section: 3,
   category: "指示",
   type: "listening",
-
-  audio:
-    "先生：テストが終わった人は、机の上に紙を置いてください。",
-
-  question:
-    "テストが終わった人は何をしますか。",
-
+  audio: "先生：テストが終わった人は、机の上に紙を置いてください。",
+  question: "テストが終わった人は何をしますか。",
   options: [
     "帰ります",
     "先生を呼びます",
     "紙を机に置きます",
     "もう一度テストをします"
   ],
-
   answer: 2
 },
 
@@ -1929,20 +1600,14 @@ const JFT_QUESTIONS = [
   section: 3,
   category: "内容理解",
   type: "listening",
-
-  audio:
-    "男の人：コーヒーを飲みますか。女の人：いいえ、今日はお茶にします。",
-
-  question:
-    "女の人は何を飲みますか。",
-
+  audio: "男の人：コーヒーを飲みますか。女の人：いいえ、今日はお茶にします。",
+  question: "女の人は何を飲みますか。",
   options: [
     "コーヒー",
     "水",
     "ジュース",
     "お茶"
   ],
-
   answer: 3
 },
 
@@ -1951,20 +1616,14 @@ const JFT_QUESTIONS = [
   section: 3,
   category: "公共機関",
   type: "listening",
-
-  audio:
-    "アナウンス：ただいま一番線の電車は遅れています。二番線をご利用ください。",
-
-  question:
-    "乗客はどの線を利用しますか。",
-
+  audio: "アナウンス：ただいま一番線の電車は遅れています。二番線をご利用ください。",
+  question: "乗客はどの線を利用しますか。",
   options: [
     "一番線",
     "二番線",
     "三番線",
     "四番線"
   ],
-
   answer: 1
 },
 
@@ -1973,20 +1632,14 @@ const JFT_QUESTIONS = [
   section: 3,
   category: "店でのやりとり",
   type: "listening",
-
-  audio:
-    "店員：こちらの商品は今日だけ二割引きです。",
-
-  question:
-    "この商品はどうなっていますか。",
-
+  audio: "店員：こちらの商品は今日だけ二割引きです。",
+  question: "この商品はどうなっていますか。",
   options: [
     "無料です",
     "値段が高くなっています",
     "20パーセント安くなっています",
     "売り切れています"
   ],
-
   answer: 2
 },
 
@@ -1995,20 +1648,14 @@ const JFT_QUESTIONS = [
   section: 3,
   category: "内容理解",
   type: "listening",
-
-  audio:
-    "女の人：明日は雨みたいですよ。男の人：そうですか。じゃあ、傘を持っていきます。",
-
-  question:
-    "男の人は何を持っていきますか。",
-
+  audio: "女の人：明日は雨みたいですよ。男の人：そうですか。じゃあ、傘を持っていきます。",
+  question: "男の人は何を持っていきますか。",
   options: [
     "帽子",
     "傘",
     "かばん",
     "水"
   ],
-
   answer: 1
 },
 
@@ -2017,49 +1664,35 @@ const JFT_QUESTIONS = [
   section: 3,
   category: "指示",
   type: "listening",
-
-  audio:
-    "アナウンス：忘れ物に気をつけてください。電車を降りる前に、座席の下を確認してください。",
-
-  question:
-    "電車を降りる前に何をしますか。",
-
+  audio: "アナウンス：忘れ物に気をつけてください。電車を降りる前に、座席の下を確認してください。",
+  question: "電車を降りる前に何をしますか。",
   options: [
     "切符を買います",
     "座席の下を確認します",
     "駅員に電話します",
     "電車に戻ります"
   ],
-
   answer: 1
 },
 
-
-/* =====================================================
+/* =========================
    SECTION 4
-   読解
-   QUESTIONS 37-50
-===================================================== */
+   37-50
+========================= */
 
 {
   id: 37,
   section: 4,
   category: "内容理解",
   type: "reading",
-
-  passage:
-    "田中さんへ\n\n明日の会議は10時からです。場所は3階の会議室です。9時50分までに来てください。\n\n山田",
-
-  question:
-    "会議は何時からですか。",
-
+  passage: "田中さんへ\n\n明日の会議は10時からです。場所は3階の会議室です。9時50分までに来てください。\n\n山田",
+  question: "会議は何時からですか。",
   options: [
     "9時50分",
     "10時",
     "10時50分",
     "11時"
   ],
-
   answer: 1
 },
 
@@ -2068,20 +1701,14 @@ const JFT_QUESTIONS = [
   section: 4,
   category: "内容理解",
   type: "reading",
-
-  passage:
-    "今日は雨なので、私は家で料理をしました。昼ご飯にカレーを作りました。",
-
-  question:
-    "今日は何をしましたか。",
-
+  passage: "今日は雨なので、私は家で料理をしました。昼ご飯にカレーを作りました。",
+  question: "今日は何をしましたか。",
   options: [
     "山へ行きました",
     "映画を見ました",
     "料理をしました",
     "買い物をしました"
   ],
-
   answer: 2
 },
 
@@ -2090,20 +1717,14 @@ const JFT_QUESTIONS = [
   section: 4,
   category: "情報検索",
   type: "reading",
-
-  passage:
-    "スーパー\n営業時間\n月曜日〜金曜日 9:00〜21:00\n土曜日・日曜日 10:00〜20:00",
-
-  question:
-    "日曜日は何時までですか。",
-
+  passage: "スーパー\n営業時間\n月曜日〜金曜日 9:00〜21:00\n土曜日・日曜日 10:00〜20:00",
+  question: "日曜日は何時までですか。",
   options: [
     "18:00",
     "19:00",
     "20:00",
     "21:00"
   ],
-
   answer: 2
 },
 
@@ -2112,20 +1733,14 @@ const JFT_QUESTIONS = [
   section: 4,
   category: "情報検索",
   type: "reading",
-
-  passage:
-    "スポーツセンター\nプール：9:00〜18:00\nジム：10:00〜21:00\n休み：火曜日",
-
-  question:
-    "火曜日について正しいものはどれですか。",
-
+  passage: "スポーツセンター\nプール：9:00〜18:00\nジム：10:00〜21:00\n休み：火曜日",
+  question: "火曜日について正しいものはどれですか。",
   options: [
     "プールだけ休みです。",
     "ジムだけ休みです。",
     "全部休みです。",
     "午前だけ休みです。"
   ],
-
   answer: 2
 },
 
@@ -2134,20 +1749,14 @@ const JFT_QUESTIONS = [
   section: 4,
   category: "内容理解",
   type: "reading",
-
-  passage:
-    "明日は会社の休みです。私は友達と映画を見る予定です。映画のあとで、駅の近くのレストランで晩ご飯を食べます。",
-
-  question:
-    "映画のあとで何をしますか。",
-
+  passage: "明日は会社の休みです。私は友達と映画を見る予定です。映画のあとで、駅の近くのレストランで晩ご飯を食べます。",
+  question: "映画のあとで何をしますか。",
   options: [
     "会社へ行きます",
     "レストランで食事をします",
     "家で寝ます",
     "買い物をします"
   ],
-
   answer: 1
 },
 
@@ -2156,20 +1765,14 @@ const JFT_QUESTIONS = [
   section: 4,
   category: "内容理解",
   type: "reading",
-
-  passage:
-    "すみません。今日は熱があるので、仕事を休みます。明日は元気になったら会社へ行きます。",
-
-  question:
-    "この人は今日はどうしますか。",
-
+  passage: "すみません。今日は熱があるので、仕事を休みます。明日は元気になったら会社へ行きます。",
+  question: "この人は今日はどうしますか。",
   options: [
     "会社へ行きます",
     "仕事を休みます",
     "旅行します",
     "病院で働きます"
   ],
-
   answer: 1
 },
 
@@ -2178,20 +1781,14 @@ const JFT_QUESTIONS = [
   section: 4,
   category: "情報検索",
   type: "reading",
-
-  passage:
-    "バス時刻表\n駅 → 市役所\n8:00\n8:30\n9:00\n9:30\n10:00",
-
-  question:
-    "8時30分の次のバスは何時ですか。",
-
+  passage: "バス時刻表\n駅 → 市役所\n8:00\n8:30\n9:00\n9:30\n10:00",
+  question: "8時30分の次のバスは何時ですか。",
   options: [
     "8:45",
     "9:00",
     "9:15",
     "9:30"
   ],
-
   answer: 1
 },
 
@@ -2200,20 +1797,14 @@ const JFT_QUESTIONS = [
   section: 4,
   category: "内容理解",
   type: "reading",
-
-  passage:
-    "私は日本に来てから、毎朝電車で会社へ行っています。会社は駅から歩いて10分ぐらいです。",
-
-  question:
-    "会社は駅からどのぐらいですか。",
-
+  passage: "私は日本に来てから、毎朝電車で会社へ行っています。会社は駅から歩いて10分ぐらいです。",
+  question: "会社は駅からどのぐらいですか。",
   options: [
     "5分",
     "10分",
     "20分",
     "30分"
   ],
-
   answer: 1
 },
 
@@ -2222,20 +1813,14 @@ const JFT_QUESTIONS = [
   section: 4,
   category: "情報検索",
   type: "reading",
-
-  passage:
-    "【図書館のお知らせ】\n今週の土曜日は午後5時に閉館します。日曜日は休館です。",
-
-  question:
-    "土曜日は何時に閉まりますか。",
-
+  passage: "【図書館のお知らせ】\n今週の土曜日は午後5時に閉館します。日曜日は休館です。",
+  question: "土曜日は何時に閉まりますか。",
   options: [
     "午後3時",
     "午後4時",
     "午後5時",
     "午後6時"
   ],
-
   answer: 2
 },
 
@@ -2244,20 +1829,14 @@ const JFT_QUESTIONS = [
   section: 4,
   category: "内容理解",
   type: "reading",
-
-  passage:
-    "リーさんへ\n\n明日の朝、スーパーで牛乳を買ってください。冷蔵庫にもうありません。卵はまだあります。\n\n母",
-
-  question:
-    "スーパーで何を買いますか。",
-
+  passage: "リーさんへ\n\n明日の朝、スーパーで牛乳を買ってください。冷蔵庫にもうありません。卵はまだあります。\n\n母",
+  question: "スーパーで何を買いますか。",
   options: [
     "牛乳",
     "卵",
     "パン",
     "水"
   ],
-
   answer: 0
 },
 
@@ -2266,20 +1845,14 @@ const JFT_QUESTIONS = [
   section: 4,
   category: "情報検索",
   type: "reading",
-
-  passage:
-    "ホテル\nチェックイン 15:00\nチェックアウト 10:00\n朝食 7:00〜9:30",
-
-  question:
-    "朝食は何時までですか。",
-
+  passage: "ホテル\nチェックイン 15:00\nチェックアウト 10:00\n朝食 7:00〜9:30",
+  question: "朝食は何時までですか。",
   options: [
     "8:30",
     "9:00",
     "9:30",
     "10:00"
   ],
-
   answer: 2
 },
 
@@ -2288,20 +1861,14 @@ const JFT_QUESTIONS = [
   section: 4,
   category: "内容理解",
   type: "reading",
-
-  passage:
-    "昨日は仕事のあとで友達と買い物に行きました。新しい靴を買いたかったのですが、いい靴がありませんでした。それで、何も買わないで帰りました。",
-
-  question:
-    "この人は何を買いましたか。",
-
+  passage: "昨日は仕事のあとで友達と買い物に行きました。新しい靴を買いたかったのですが、いい靴がありませんでした。それで、何も買わないで帰りました。",
+  question: "この人は何を買いましたか。",
   options: [
     "靴",
     "服",
     "かばん",
     "何も買いませんでした"
   ],
-
   answer: 3
 },
 
@@ -2310,20 +1877,14 @@ const JFT_QUESTIONS = [
   section: 4,
   category: "内容理解",
   type: "reading",
-
-  passage:
-    "来週の月曜日から、新しい仕事が始まります。仕事は朝8時から午後4時までです。家から会社まで電車で約30分かかります。",
-
-  question:
-    "仕事は何時からですか。",
-
+  passage: "来週の月曜日から、新しい仕事が始まります。仕事は朝8時から午後4時までです。家から会社まで電車で約30分かかります。",
+  question: "仕事は何時からですか。",
   options: [
     "7時",
     "8時",
     "9時",
     "10時"
   ],
-
   answer: 1
 },
 
@@ -2332,28 +1893,1159 @@ const JFT_QUESTIONS = [
   section: 4,
   category: "情報検索",
   type: "reading",
-
-  passage:
-    "【レストラン メニュー】\nカレー 700円\nラーメン 800円\n定食 900円\n\n11:00〜14:00はランチタイムです。ランチタイムはすべて100円安くなります。",
-
-  question:
-    "ランチタイムにカレーはいくらですか。",
-
+  passage: "【レストラン メニュー】\nカレー 700円\nラーメン 800円\n定食 900円\n\n11:00〜14:00はランチタイムです。ランチタイムはすべて100円安くなります。",
+  question: "ランチタイムにカレーはいくらですか。",
   options: [
     "500円",
     "600円",
     "700円",
     "800円"
   ],
-
   answer: 1
 }
 
 ];
 
-  <script src="database.js"></script>
-  <script src="jft.js"></script>
 
+/* =====================================================
+   EXAM CONFIG
+===================================================== */
+
+const SECTIONS = {
+  1: {
+    name: "文字と語彙",
+    sub: "Script & Vocabulary"
+  },
+
+  2: {
+    name: "会話と表現",
+    sub: "Conversation & Expression"
+  },
+
+  3: {
+    name: "聴解",
+    sub: "Listening"
+  },
+
+  4: {
+    name: "読解",
+    sub: "Reading"
+  }
+};
+
+const TOTAL_TIME = 60 * 60;
+
+
+/* =====================================================
+   STATE
+===================================================== */
+
+let currentQuestion = 0;
+
+let answers = new Array(JFT_QUESTIONS.length).fill(null);
+
+let remainingTime = TOTAL_TIME;
+
+let timerInterval = null;
+
+let examFinished = false;
+
+let reviewMode = false;
+
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
+
+const startScreen =
+  document.getElementById("startScreen");
+
+const examScreen =
+  document.getElementById("examScreen");
+
+const transitionScreen =
+  document.getElementById("transitionScreen");
+
+const resultScreen =
+  document.getElementById("resultScreen");
+
+const startBtn =
+  document.getElementById("startBtn");
+
+const prevBtn =
+  document.getElementById("prevBtn");
+
+const nextBtn =
+  document.getElementById("nextBtn");
+
+const continueBtn =
+  document.getElementById("continueBtn");
+
+const reviewBtn =
+  document.getElementById("reviewBtn");
+
+const restartBtn =
+  document.getElementById("restartBtn");
+
+const questionGrid =
+  document.getElementById("questionGrid");
+
+const questionContent =
+  document.getElementById("questionContent");
+
+const optionsContainer =
+  document.getElementById("options");
+
+const categoryLabel =
+  document.getElementById("categoryLabel");
+
+const audioBox =
+  document.getElementById("audioBox");
+
+const playAudioBtn =
+  document.getElementById("playAudioBtn");
+
+const timerElement =
+  document.getElementById("timer");
+
+const timerBox =
+  document.getElementById("timerBox");
+
+const questionNumber =
+  document.getElementById("questionNumber");
+
+const totalQuestions =
+  document.getElementById("totalQuestions");
+
+const progressBar =
+  document.getElementById("progressBar");
+
+const sectionName =
+  document.getElementById("sectionName");
+
+const sectionSub =
+  document.getElementById("sectionSub");
+
+
+totalQuestions.textContent =
+  JFT_QUESTIONS.length;
+
+
+/* =====================================================
+   SCREEN CONTROL
+===================================================== */
+
+function showScreen(screen) {
+
+  document
+    .querySelectorAll(".screen")
+    .forEach(el => {
+      el.classList.remove("active");
+    });
+
+  screen.classList.add("active");
+
+  window.scrollTo({
+    top: 0,
+    behavior: "instant"
+  });
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+startBtn.addEventListener("click", startExam);
+
+function startExam() {
+
+  currentQuestion = 0;
+
+  answers =
+    new Array(JFT_QUESTIONS.length).fill(null);
+
+  remainingTime = TOTAL_TIME;
+
+  examFinished = false;
+
+  reviewMode = false;
+
+  showScreen(examScreen);
+
+  renderQuestion();
+
+  renderQuestionGrid();
+
+  updateTimer();
+
+  clearInterval(timerInterval);
+
+  timerInterval =
+    setInterval(() => {
+
+      remainingTime--;
+
+      updateTimer();
+
+      if (remainingTime <= 0) {
+
+        clearInterval(timerInterval);
+
+        finishExam();
+
+      }
+
+    }, 1000);
+}
+
+
+/* =====================================================
+   TIMER
+===================================================== */
+
+function updateTimer() {
+
+  const minutes =
+    Math.floor(remainingTime / 60);
+
+  const seconds =
+    remainingTime % 60;
+
+  timerElement.textContent =
+    String(minutes).padStart(2, "0")
+    + ":"
+    + String(seconds).padStart(2, "0");
+
+  if (remainingTime <= 300) {
+    timerBox.classList.add("warning");
+  } else {
+    timerBox.classList.remove("warning");
+  }
+}
+
+
+/* =====================================================
+   RENDER QUESTION
+===================================================== */
+
+function renderQuestion() {
+
+  const q =
+    JFT_QUESTIONS[currentQuestion];
+
+  if (!q) return;
+
+  const section =
+    SECTIONS[q.section];
+
+  sectionName.textContent =
+    section.name;
+
+  sectionSub.textContent =
+    section.sub;
+
+  questionNumber.textContent =
+    q.id;
+
+  progressBar.style.width =
+    ((currentQuestion + 1)
+      / JFT_QUESTIONS.length * 100)
+    + "%";
+
+  categoryLabel.textContent =
+    q.category || "";
+
+
+  /* QUESTION CONTENT */
+
+  let html = "";
+
+  if (q.context) {
+
+    html += `
+      <div class="question-context">
+        ${escapeHTML(q.context)}
+      </div>
+    `;
+
+  }
+
+  if (q.passage) {
+
+    html += `
+      <div class="question-context">
+        ${escapeHTML(q.passage)}
+      </div>
+    `;
+
+  }
+
+  html += `
+    <div class="question-text">
+      ${escapeHTML(q.question)}
+    </div>
+  `;
+
+  questionContent.innerHTML = html;
+
+
+  /* AUDIO */
+
+  if (q.type === "listening") {
+
+    audioBox.classList.remove("hidden");
+
+  } else {
+
+    audioBox.classList.add("hidden");
+
+  }
+
+
+  /* OPTIONS */
+
+  renderOptions(q);
+
+  updateNavigation();
+
+  renderQuestionGrid();
+
+}
+
+
+/* =====================================================
+   OPTIONS
+===================================================== */
+
+function renderOptions(q) {
+
+  optionsContainer.innerHTML = "";
+
+  q.options.forEach((option, index) => {
+
+    const div =
+      document.createElement("div");
+
+    div.className = "option";
+
+    if (answers[currentQuestion] === index) {
+      div.classList.add("selected");
+    }
+
+    const letter =
+      String.fromCharCode(65 + index);
+
+    div.innerHTML = `
+      <div class="option-letter">
+        ${letter}
+      </div>
+
+      <div>
+        ${escapeHTML(option)}
+      </div>
+    `;
+
+
+    if (!reviewMode) {
+
+      div.addEventListener(
+        "click",
+        () => selectAnswer(index)
+      );
+
+    }
+
+
+    /* REVIEW */
+
+    if (reviewMode) {
+
+      if (index === q.answer) {
+
+        div.classList.add(
+          "review-correct"
+        );
+
+      }
+
+      if (
+        answers[currentQuestion] === index
+        &&
+        index !== q.answer
+      ) {
+
+        div.classList.add(
+          "review-wrong"
+        );
+
+      }
+
+    }
+
+
+    optionsContainer.appendChild(div);
+
+  });
+
+
+  if (reviewMode) {
+
+    const userAnswer =
+      answers[currentQuestion];
+
+    let reviewHTML = "";
+
+    if (userAnswer === null) {
+
+      reviewHTML = `
+        <div class="review-answer">
+          <strong>Jawaban kamu:</strong>
+          Tidak dijawab
+          <br>
+          <strong>Jawaban benar:</strong>
+          ${escapeHTML(q.options[q.answer])}
+        </div>
+      `;
+
+    } else {
+
+      reviewHTML = `
+        <div class="review-answer">
+          <strong>Jawaban kamu:</strong>
+          ${escapeHTML(q.options[userAnswer])}
+          <br>
+          <strong>Jawaban benar:</strong>
+          ${escapeHTML(q.options[q.answer])}
+        </div>
+      `;
+
+    }
+
+    optionsContainer.insertAdjacentHTML(
+      "afterend",
+      reviewHTML
+    );
+
+  }
+}
+
+
+/* =====================================================
+   SELECT ANSWER
+===================================================== */
+
+function selectAnswer(index) {
+
+  if (reviewMode) return;
+
+  answers[currentQuestion] =
+    index;
+
+  renderQuestion();
+
+}
+
+
+/* =====================================================
+   QUESTION GRID
+===================================================== */
+
+function renderQuestionGrid() {
+
+  questionGrid.innerHTML = "";
+
+  let lastSection = null;
+
+  JFT_QUESTIONS.forEach((q, index) => {
+
+    if (q.section !== lastSection) {
+
+      const title =
+        document.createElement("div");
+
+      title.className =
+        "nav-section-title";
+
+      title.style.gridColumn =
+        "1 / -1";
+
+      title.textContent =
+        SECTIONS[q.section].name;
+
+      questionGrid.appendChild(title);
+
+      lastSection =
+        q.section;
+    }
+
+
+    const btn =
+      document.createElement("div");
+
+    btn.className =
+      "question-number";
+
+    btn.textContent =
+      q.id;
+
+
+    if (index === currentQuestion) {
+
+      btn.classList.add("current");
+
+    }
+
+
+    if (answers[index] !== null) {
+
+      btn.classList.add("answered");
+
+    }
+
+
+    btn.addEventListener(
+      "click",
+      () => {
+
+        currentQuestion = index;
+
+        renderQuestion();
+
+      }
+    );
+
+
+    questionGrid.appendChild(btn);
+
+  });
+
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+prevBtn.addEventListener(
+  "click",
+  () => {
+
+    if (currentQuestion > 0) {
+
+      currentQuestion--;
+
+      renderQuestion();
+
+    }
+
+  }
+);
+
+
+nextBtn.addEventListener(
+  "click",
+  () => {
+
+    if (
+      currentQuestion <
+      JFT_QUESTIONS.length - 1
+    ) {
+
+      currentQuestion++;
+
+      renderQuestion();
+
+    } else {
+
+      finishExam();
+
+    }
+
+  }
+);
+
+
+function updateNavigation() {
+
+  prevBtn.disabled =
+    currentQuestion === 0;
+
+  if (
+    currentQuestion ===
+    JFT_QUESTIONS.length - 1
+  ) {
+
+    nextBtn.textContent =
+      "Finish ✓";
+
+  } else {
+
+    nextBtn.textContent =
+      "Next →";
+
+  }
+
+}
+
+
+/* =====================================================
+   LISTENING
+===================================================== */
+
+playAudioBtn.addEventListener(
+  "click",
+  playListening
+);
+
+
+function playListening() {
+
+  const q =
+    JFT_QUESTIONS[currentQuestion];
+
+  if (!q.audio) return;
+
+  if (
+    "speechSynthesis"
+    in window
+  ) {
+
+    speechSynthesis.cancel();
+
+    const utterance =
+      new SpeechSynthesisUtterance(
+        q.audio
+      );
+
+    utterance.lang =
+      "ja-JP";
+
+    utterance.rate =
+      0.85;
+
+    utterance.pitch =
+      1;
+
+    speechSynthesis.speak(
+      utterance
+    );
+
+  } else {
+
+    alert(
+      "Browser kamu tidak mendukung audio speech."
+    );
+
+  }
+
+}
+
+
+/* =====================================================
+   FINISH
+===================================================== */
+
+function finishExam() {
+
+  if (examFinished) return;
+
+  examFinished = true;
+
+  clearInterval(timerInterval);
+
+  if (
+    currentQuestion <
+    JFT_QUESTIONS.length - 1
+  ) {
+
+    const unanswered =
+      answers.filter(
+        a => a === null
+      ).length;
+
+    const proceed =
+      confirm(
+        "Kamu belum menyelesaikan semua soal.\n\n"
+        + unanswered
+        + " soal belum dijawab.\n\n"
+        + "Tetap akhiri ujian?"
+      );
+
+    if (!proceed) {
+
+      examFinished = false;
+
+      timerInterval =
+        setInterval(() => {
+
+          remainingTime--;
+
+          updateTimer();
+
+          if (remainingTime <= 0) {
+
+            clearInterval(timerInterval);
+
+            finishExam();
+
+          }
+
+        }, 1000);
+
+      return;
+    }
+
+  }
+
+
+  showResult();
+
+}
+
+
+/* =====================================================
+   SCORE
+===================================================== */
+
+function calculateScore() {
+
+  let correct = 0;
+
+  JFT_QUESTIONS.forEach(
+    (q, index) => {
+
+      if (
+        answers[index] ===
+        q.answer
+      ) {
+
+        correct++;
+
+      }
+
+    }
+  );
+
+  return correct;
+
+}
+
+
+/*
+  IMPORTANT:
+
+  Ini adalah ESTIMATED score,
+  bukan rumus resmi JFT-Basic.
+
+  0 benar  = 10
+  50 benar = 250
+
+  Skala dibuat linear sebagai
+  simulasi latihan.
+*/
+
+function calculateScaledScore(correct) {
+
+  const score =
+    10 +
+    (correct / JFT_QUESTIONS.length)
+    * 240;
+
+  return Math.round(score);
+
+}
+
+
+/* =====================================================
+   LEVEL
+===================================================== */
+
+function getLevel(score) {
+
+  if (score >= 200) {
+
+    return "Strong — JFT-Basic Pass Range";
+
+  }
+
+  if (score >= 180) {
+
+    return "Good — Near Pass Range";
+
+  }
+
+  if (score >= 150) {
+
+    return "Developing — Keep Practicing";
+
+  }
+
+  if (score >= 100) {
+
+    return "Basic — Needs More Practice";
+
+  }
+
+  return "Beginner — Keep Studying";
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function showResult() {
+
+  const correct =
+    calculateScore();
+
+  const score =
+    calculateScaledScore(
+      correct
+    );
+
+  const accuracy =
+    Math.round(
+      correct /
+      JFT_QUESTIONS.length *
+      100
+    );
+
+  document.getElementById(
+    "finalScore"
+  ).textContent =
+    score;
+
+  document.getElementById(
+    "correctCount"
+  ).textContent =
+    correct
+    + " / "
+    + JFT_QUESTIONS.length;
+
+  document.getElementById(
+    "accuracy"
+  ).textContent =
+    accuracy + "%";
+
+  document.getElementById(
+    "levelResult"
+  ).textContent =
+    getLevel(score);
+
+  renderSectionResults();
+
+  showScreen(resultScreen);
+
+}
+
+
+/* =====================================================
+   SECTION RESULTS
+===================================================== */
+
+function renderSectionResults() {
+
+  const container =
+    document.getElementById(
+      "sectionResults"
+    );
+
+  container.innerHTML = "";
+
+
+  for (
+    let section = 1;
+    section <= 4;
+    section++
+  ) {
+
+    const questions =
+      JFT_QUESTIONS.filter(
+        q => q.section === section
+      );
+
+    let correct = 0;
+
+    questions.forEach(q => {
+
+      const index =
+        JFT_QUESTIONS.indexOf(q);
+
+      if (
+        answers[index] ===
+        q.answer
+      ) {
+
+        correct++;
+
+      }
+
+    });
+
+
+    const percent =
+      Math.round(
+        correct /
+        questions.length *
+        100
+      );
+
+
+    container.innerHTML += `
+
+      <div class="section-result">
+
+        <div class="section-result-header">
+
+          <span>
+            ${SECTIONS[section].name}
+          </span>
+
+          <strong>
+            ${correct}/${questions.length}
+            (${percent}%)
+          </strong>
+
+        </div>
+
+        <div class="section-result-bar">
+
+          <div
+            class="section-result-fill"
+            style="width:${percent}%">
+          </div>
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+}
+
+
+/* =====================================================
+   REVIEW
+===================================================== */
+
+reviewBtn.addEventListener(
+  "click",
+  startReview
+);
+
+
+function startReview() {
+
+  reviewMode = true;
+
+  currentQuestion = 0;
+
+  showScreen(examScreen);
+
+  renderQuestion();
+
+}
+
+
+function exitReviewIfFinished() {
+
+  reviewMode = false;
+
+}
+
+
+/* =====================================================
+   RESTART
+===================================================== */
+
+restartBtn.addEventListener(
+  "click",
+  () => {
+
+    reviewMode = false;
+
+    answers =
+      new Array(
+        JFT_QUESTIONS.length
+      ).fill(null);
+
+    currentQuestion = 0;
+
+    remainingTime =
+      TOTAL_TIME;
+
+    examFinished = false;
+
+    showScreen(startScreen);
+
+  }
+);
+
+
+/* =====================================================
+   CONTINUE
+===================================================== */
+
+continueBtn.addEventListener(
+  "click",
+  () => {
+
+    showScreen(examScreen);
+
+  }
+);
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHTML(value) {
+
+  if (value === undefined ||
+      value === null) {
+
+    return "";
+
+  }
+
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+
+}
+
+
+/* =====================================================
+   KEYBOARD SHORTCUTS
+===================================================== */
+
+document.addEventListener(
+  "keydown",
+  event => {
+
+    if (
+      !examScreen.classList.contains(
+        "active"
+      )
+    ) return;
+
+    if (reviewMode) {
+
+      if (
+        event.key === "ArrowRight"
+        &&
+        currentQuestion <
+        JFT_QUESTIONS.length - 1
+      ) {
+
+        currentQuestion++;
+
+        renderQuestion();
+
+      }
+
+      if (
+        event.key === "ArrowLeft"
+        &&
+        currentQuestion > 0
+      ) {
+
+        currentQuestion--;
+
+        renderQuestion();
+
+      }
+
+      return;
+
+    }
+
+
+    /* A B C D */
+
+    const key =
+      event.key.toLowerCase();
+
+    if (
+      ["a","b","c","d"].includes(key)
+    ) {
+
+      const index =
+        ["a","b","c","d"]
+        .indexOf(key);
+
+      const q =
+        JFT_QUESTIONS[
+          currentQuestion
+        ];
+
+      if (
+        q &&
+        index < q.options.length
+      ) {
+
+        selectAnswer(index);
+
+      }
+
+    }
+
+
+    if (
+      event.key === "ArrowRight"
+    ) {
+
+      if (
+        currentQuestion <
+        JFT_QUESTIONS.length - 1
+      ) {
+
+        currentQuestion++;
+
+        renderQuestion();
+
+      }
+
+    }
+
+
+    if (
+      event.key === "ArrowLeft"
+    ) {
+
+      if (
+        currentQuestion > 0
+      ) {
+
+        currentQuestion--;
+
+        renderQuestion();
+
+      }
+
+    }
+
+  }
+);
+
+
+/* =====================================================
+   INITIAL
+===================================================== */
+
+totalQuestions.textContent =
+  JFT_QUESTIONS.length;
+
+</script>
 
 </body>
 </html>
