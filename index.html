@@ -8,302 +8,6 @@
 
   <link rel="stylesheet" href="style.css">
 </head>
-
-<body>
-
-  <!-- =========================
-       START SCREEN
-  ========================== -->
-
-  <section id="startScreen" class="screen active">
-
-    <div class="start-card">
-
-      <div class="logo">
-        JFT-Basic
-      </div>
-
-      <h1>Mock Test</h1>
-
-      <p class="subtitle">
-        Japan Foundation Test for Basic Japanese
-      </p>
-
-      <div class="exam-info">
-
-        <div>
-          <strong>50</strong>
-          <span>Questions</span>
-        </div>
-
-        <div>
-          <strong>60</strong>
-          <span>Minutes</span>
-        </div>
-
-        <div>
-          <strong>4</strong>
-          <span>Sections</span>
-        </div>
-
-      </div>
-
-      <div class="notice">
-        <strong>試験について</strong>
-
-        <p>
-          この模擬試験はJFT-Basicの形式を参考にした
-          オリジナル問題です。
-        </p>
-
-        <p>
-          This is a practice simulation. The score is an
-          estimated score and is not an official JFT-Basic score.
-        </p>
-      </div>
-
-      <button id="startBtn" class="primary-btn">
-        START TEST
-      </button>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       EXAM SCREEN
-  ========================== -->
-
-  <section id="examScreen" class="screen">
-
-    <header class="exam-header">
-
-      <div>
-        <div id="sectionName" class="section-name">
-          文字と語彙
-        </div>
-
-        <div id="sectionSub" class="section-sub">
-          Script & Vocabulary
-        </div>
-      </div>
-
-      <div class="timer-box">
-        <span>TIME</span>
-        <strong id="timer">60:00</strong>
-      </div>
-
-    </header>
-
-
-    <div class="progress-wrapper">
-
-      <div class="progress-text">
-        Question
-        <strong id="questionNumber">1</strong>
-        /
-        <strong id="totalQuestions">50</strong>
-      </div>
-
-      <div class="progress-bar">
-        <div id="progressBar"></div>
-      </div>
-
-    </div>
-
-
-    <main class="exam-container">
-
-      <!-- QUESTION NAVIGATION -->
-
-      <aside class="question-nav">
-
-        <div class="nav-title">
-          Questions
-        </div>
-
-        <div id="questionGrid"></div>
-
-      </aside>
-
-
-      <!-- QUESTION AREA -->
-
-      <article class="question-area">
-
-        <div class="category-label" id="categoryLabel">
-          語の意味
-        </div>
-
-        <div id="questionContent"></div>
-
-        <!-- LISTENING AUDIO -->
-
-        <div id="audioBox" class="audio-box hidden">
-
-          <div class="audio-icon">
-            🔊
-          </div>
-
-          <div>
-            <strong>Listening</strong>
-            <p>
-              Dengarkan percakapan sebelum memilih jawaban.
-            </p>
-          </div>
-
-          <button id="playAudioBtn">
-            ▶ Play
-          </button>
-
-        </div>
-
-
-        <div id="options" class="options"></div>
-
-
-        <div class="navigation-buttons">
-
-          <button
-            id="prevBtn"
-            class="secondary-btn">
-            ← Previous
-          </button>
-
-          <button
-            id="nextBtn"
-            class="primary-btn">
-            Next →
-          </button>
-
-        </div>
-
-      </article>
-
-    </main>
-
-  </section>
-
-
-  <!-- =========================
-       SECTION TRANSITION
-  ========================== -->
-
-  <section id="transitionScreen" class="screen">
-
-    <div class="transition-card">
-
-      <div class="transition-icon">
-        ✓
-      </div>
-
-      <h2 id="transitionTitle">
-        Section Completed
-      </h2>
-
-      <p id="transitionText">
-        You cannot return to the previous section.
-      </p>
-
-      <button
-        id="continueBtn"
-        class="primary-btn">
-        Continue →
-      </button>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       RESULT SCREEN
-  ========================== -->
-
-  <section id="resultScreen" class="screen">
-
-    <div class="result-card">
-
-      <div class="result-title">
-        TEST COMPLETED
-      </div>
-
-      <div class="score-label">
-        ESTIMATED SCORE
-      </div>
-
-      <div id="finalScore" class="final-score">
-        0
-      </div>
-
-      <div class="score-max">
-        / 250
-      </div>
-
-      <div id="levelResult" class="level-result">
-        -
-      </div>
-
-
-      <div class="result-divider"></div>
-
-
-      <div class="raw-score">
-
-        <div>
-          <span>Correct</span>
-          <strong id="correctCount">
-            0 / 50
-          </strong>
-        </div>
-
-        <div>
-          <span>Accuracy</span>
-          <strong id="accuracy">
-            0%
-          </strong>
-        </div>
-
-      </div>
-
-
-      <h3>Section Performance</h3>
-
-      <div id="sectionResults"></div>
-
-
-      <div class="result-warning">
-
-        ⚠️ Estimated practice score only.
-
-        <br>
-
-        The official JFT-Basic score uses
-        statistical equating and cannot be reproduced
-        exactly by this website.
-
-      </div>
-
-
-      <button
-        id="reviewBtn"
-        class="secondary-btn">
-        Review Answers
-      </button>
-
-      <button
-        id="restartBtn"
-        class="primary-btn">
-        Try Again
-      </button>
-
-    </div>
-
-  </section>
-
-
-  
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
 
 * {
@@ -1276,6 +980,302 @@ button:disabled {
   }
 
 }
+<body>
+
+  <!-- =========================
+       START SCREEN
+  ========================== -->
+
+  <section id="startScreen" class="screen active">
+
+    <div class="start-card">
+
+      <div class="logo">
+        JFT-Basic
+      </div>
+
+      <h1>Mock Test</h1>
+
+      <p class="subtitle">
+        Japan Foundation Test for Basic Japanese
+      </p>
+
+      <div class="exam-info">
+
+        <div>
+          <strong>50</strong>
+          <span>Questions</span>
+        </div>
+
+        <div>
+          <strong>60</strong>
+          <span>Minutes</span>
+        </div>
+
+        <div>
+          <strong>4</strong>
+          <span>Sections</span>
+        </div>
+
+      </div>
+
+      <div class="notice">
+        <strong>試験について</strong>
+
+        <p>
+          この模擬試験はJFT-Basicの形式を参考にした
+          オリジナル問題です。
+        </p>
+
+        <p>
+          This is a practice simulation. The score is an
+          estimated score and is not an official JFT-Basic score.
+        </p>
+      </div>
+
+      <button id="startBtn" class="primary-btn">
+        START TEST
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       EXAM SCREEN
+  ========================== -->
+
+  <section id="examScreen" class="screen">
+
+    <header class="exam-header">
+
+      <div>
+        <div id="sectionName" class="section-name">
+          文字と語彙
+        </div>
+
+        <div id="sectionSub" class="section-sub">
+          Script & Vocabulary
+        </div>
+      </div>
+
+      <div class="timer-box">
+        <span>TIME</span>
+        <strong id="timer">60:00</strong>
+      </div>
+
+    </header>
+
+
+    <div class="progress-wrapper">
+
+      <div class="progress-text">
+        Question
+        <strong id="questionNumber">1</strong>
+        /
+        <strong id="totalQuestions">50</strong>
+      </div>
+
+      <div class="progress-bar">
+        <div id="progressBar"></div>
+      </div>
+
+    </div>
+
+
+    <main class="exam-container">
+
+      <!-- QUESTION NAVIGATION -->
+
+      <aside class="question-nav">
+
+        <div class="nav-title">
+          Questions
+        </div>
+
+        <div id="questionGrid"></div>
+
+      </aside>
+
+
+      <!-- QUESTION AREA -->
+
+      <article class="question-area">
+
+        <div class="category-label" id="categoryLabel">
+          語の意味
+        </div>
+
+        <div id="questionContent"></div>
+
+        <!-- LISTENING AUDIO -->
+
+        <div id="audioBox" class="audio-box hidden">
+
+          <div class="audio-icon">
+            🔊
+          </div>
+
+          <div>
+            <strong>Listening</strong>
+            <p>
+              Dengarkan percakapan sebelum memilih jawaban.
+            </p>
+          </div>
+
+          <button id="playAudioBtn">
+            ▶ Play
+          </button>
+
+        </div>
+
+
+        <div id="options" class="options"></div>
+
+
+        <div class="navigation-buttons">
+
+          <button
+            id="prevBtn"
+            class="secondary-btn">
+            ← Previous
+          </button>
+
+          <button
+            id="nextBtn"
+            class="primary-btn">
+            Next →
+          </button>
+
+        </div>
+
+      </article>
+
+    </main>
+
+  </section>
+
+
+  <!-- =========================
+       SECTION TRANSITION
+  ========================== -->
+
+  <section id="transitionScreen" class="screen">
+
+    <div class="transition-card">
+
+      <div class="transition-icon">
+        ✓
+      </div>
+
+      <h2 id="transitionTitle">
+        Section Completed
+      </h2>
+
+      <p id="transitionText">
+        You cannot return to the previous section.
+      </p>
+
+      <button
+        id="continueBtn"
+        class="primary-btn">
+        Continue →
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       RESULT SCREEN
+  ========================== -->
+
+  <section id="resultScreen" class="screen">
+
+    <div class="result-card">
+
+      <div class="result-title">
+        TEST COMPLETED
+      </div>
+
+      <div class="score-label">
+        ESTIMATED SCORE
+      </div>
+
+      <div id="finalScore" class="final-score">
+        0
+      </div>
+
+      <div class="score-max">
+        / 250
+      </div>
+
+      <div id="levelResult" class="level-result">
+        -
+      </div>
+
+
+      <div class="result-divider"></div>
+
+
+      <div class="raw-score">
+
+        <div>
+          <span>Correct</span>
+          <strong id="correctCount">
+            0 / 50
+          </strong>
+        </div>
+
+        <div>
+          <span>Accuracy</span>
+          <strong id="accuracy">
+            0%
+          </strong>
+        </div>
+
+      </div>
+
+
+      <h3>Section Performance</h3>
+
+      <div id="sectionResults"></div>
+
+
+      <div class="result-warning">
+
+        ⚠️ Estimated practice score only.
+
+        <br>
+
+        The official JFT-Basic score uses
+        statistical equating and cannot be reproduced
+        exactly by this website.
+
+      </div>
+
+
+      <button
+        id="reviewBtn"
+        class="secondary-btn">
+        Review Answers
+      </button>
+
+      <button
+        id="restartBtn"
+        class="primary-btn">
+        Try Again
+      </button>
+
+    </div>
+
+  </section>
+
+
+  
+
 
 const JFT_QUESTIONS = [
 
