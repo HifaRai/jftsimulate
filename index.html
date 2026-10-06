@@ -907,31 +907,18 @@ button:disabled {
       <div id="questionContent"></div>
 
 
-      <div
-        id="audioBox"
-        class="audio-box hidden">
+  <div id="audioBox" class="audio-box hidden">
+  <div class="audio-icon">🔊</div>
 
-        <div class="audio-icon">
-          🔊
-        </div>
+  <div>
+    <strong>Listening</strong>
+    <p>Dengarkan percakapan sebelum memilih jawaban.</p>
+  </div>
 
-        <div>
-
-          <strong>
-            Listening
-          </strong>
-
-          <p>
-            Dengarkan percakapan sebelum memilih jawaban.
-          </p>
-
-        </div>
-
-        <button id="playAudioBtn">
-          ▶ Play
-        </button>
-
-      </div>
+  <button id="playAudioBtn" type="button">
+    ▶ Play
+  </button>
+</div>
 
 
       <div
@@ -2003,8 +1990,9 @@ const audioBox =
   document.getElementById("audioBox");
 
 const playAudioBtn =
-  document.getElementById("playAudioBtn");
-
+  document.getElementById("playAudioBtn").addEventListener("click", function () {
+  playListeningAudio();
+});
 const timerElement =
   document.getElementById("timer");
 
@@ -2922,7 +2910,96 @@ function escapeHTML(value) {
     .replace(/'/g, "&#039;");
 
 }
+// ===============================
+// JFT LISTENING AUDIO - JAPANESE TTS
+// ===============================
 
+function getJapaneseVoice() {
+  const voices = window.speechSynthesis.getVoices();
+
+  // Cari voice Jepang
+  return (
+    voices.find(v => v.lang.toLowerCase() === "ja-jp") ||
+    voices.find(v => v.lang.toLowerCase().startsWith("ja")) ||
+    voices.find(v => /japanese|日本語/i.test(v.name)) ||
+    null
+  );
+}
+
+function playListeningAudio() {
+  const question = JFT_QUESTIONS[currentQuestion];
+
+  if (!question || !question.audio) {
+    console.log("Audio tidak ditemukan untuk soal ini.");
+    return;
+  }
+
+  // Cek dukungan browser
+  if (!("speechSynthesis" in window)) {
+    alert("Browser ini tidak mendukung audio otomatis.");
+    return;
+  }
+
+  // Hentikan suara sebelumnya
+  speechSynthesis.cancel();
+
+  const text = question.audio;
+
+  const utterance = new SpeechSynthesisUtterance(text);
+
+  // Bahasa Jepang
+  utterance.lang = "ja-JP";
+
+  // Kecepatan dibuat seperti latihan listening
+  utterance.rate = 0.85;
+
+  // Pitch normal
+  utterance.pitch = 1.0;
+
+  // Volume maksimal
+  utterance.volume = 1.0;
+
+  // Gunakan voice Jepang jika tersedia
+  const japaneseVoice = getJapaneseVoice();
+
+  if (japaneseVoice) {
+    utterance.voice = japaneseVoice;
+  }
+
+  // Ubah status tombol saat berbicara
+  const button = document.getElementById("playAudioBtn");
+
+  if (button) {
+    button.textContent = "🔊 Playing...";
+    button.disabled = true;
+  }
+
+  utterance.onend = function () {
+    if (button) {
+      button.textContent = "▶ Play";
+      button.disabled = false;
+    }
+  };
+
+  utterance.onerror = function (event) {
+    console.error("Speech error:", event);
+
+    if (button) {
+      button.textContent = "▶ Play";
+      button.disabled = false;
+    }
+  };
+
+  speechSynthesis.speak(utterance);
+}
+
+
+// Pastikan voice Jepang sudah dimuat
+if ("speechSynthesis" in window) {
+  speechSynthesis.onvoiceschanged = function () {
+    getJapaneseVoice();
+  };
+}
 
 /* =====================================================
    KEYBOARD SHORTCUTS
